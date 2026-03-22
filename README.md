@@ -212,6 +212,14 @@ Real-world pharmaceutical distribution data for the Attica region of Greece.
 
 ---
 
+## Citation
+
+If you use this analysis or the underlying dataset, please cite:
+
+> Vrani, A. (2025) "Delivering Data: A Real-World Dataset for Last-Mile Delivery Optimization". Zenodo. doi:10.5281/zenodo.15672291.
+
+---
+
 ## Dependencies
 
 | Package | Purpose |
