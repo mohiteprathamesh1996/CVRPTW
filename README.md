@@ -135,6 +135,66 @@ CVRPTW/
 
 ---
 
+## Data Flow
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                        RAW DATA (Zenodo)                        │
+│                                                                 │
+│  orders.xlsx          distance_matrix_X.xlsx                    │
+│  (weight, volume,     time_matrix_optimistic_X.xlsx             │
+│   service time,       time_matrix_mostlikely_X.xlsx             │
+│   EAT, LAT)           time_matrix_pessimistic_X.xlsx            │
+└──────────────────────────────┬──────────────────────────────────┘
+                               │
+                               ▼
+                      ┌────────────────┐
+                      │  data_loader   │  validate, clean, normalise
+                      │  CVRPTWData    │  → unified data container
+                      └───────┬────────┘
+                              │
+              ┌───────────────┼───────────────┐
+              │               │               │
+              ▼               ▼               ▼
+     ┌──────────────┐ ┌──────────────┐ ┌──────────────┐
+     │ cvrptw_solver│ │  clustering  │ │   scenario_  │
+     │              │ │              │ │  experiments │
+     │ OR-Tools CP  │ │ k-means k*=7 │ │              │
+     │ GLS, 60s     │ │ sub-VRP per  │ │ demand / TW  │
+     │ hard + soft  │ │ cluster      │ │ fleet / cap  │
+     │ time windows │ └──────┬───────┘ └──────┬───────┘
+     └──────┬───────┘        │                │
+            │                │                │
+            ▼                ▼                │
+     ┌──────────────┐ ┌──────────────┐        │
+     │  stochastic_ │ │  robustness_ │        │
+     │  analysis    │ │  analysis    │        │
+     │              │ │              │        │
+     │ 3-scenario   │ │ PERT variance│        │
+     │ comparison   │ │ propagation  │        │
+     │ route overlap│ │ P(late) per  │        │
+     │              │ │ customer     │        │
+     │              │ │ arc uncertainty        │
+     └──────┬───────┘ └──────┬───────┘        │
+            │                │                │
+            └────────────────┴────────────────┘
+                               │
+                               ▼
+                      ┌────────────────┐
+                      │ visualizations │
+                      └───────┬────────┘
+                              │
+        ┌─────────────────────┼──────────────────────┐
+        │                     │                      │
+        ▼                     ▼                      ▼
+  Route maps &          KPI dashboards &      Scenario &
+  arrival Gantt         delay risk plots      experiment charts
+  (routes_*.png)        (delay_risk.png       (exp_*.png
+                         route_stability.png)  scenario_kpis.png)
+```
+
+---
+
 ## Results and Insights
 
 ### Stochastic Scenario Impact
