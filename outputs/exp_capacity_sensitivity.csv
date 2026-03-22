@@ -1,0 +1,6 @@
+status,feasible,vehicles_used,total_travel_min,total_dist_km,late_deliveries,service_level,solve_time_s,max_weight_kg
+OPTIMAL,1,5,585.0,344.1,0,1.0,40.0,600
+OPTIMAL,1,5,593.0,344.2,0,1.0,40.0,500
+OPTIMAL,1,5,613.0,352.7,0,1.0,40.0,400
+OPTIMAL,1,6,629.0,382.5,0,1.0,40.0,350
+UNKNOWN,0,0,0.0,0.0,0,1.0,0.0,300

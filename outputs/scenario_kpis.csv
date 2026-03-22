@@ -1,0 +1,4 @@
+Scenario,Status,Vehicles Used,Total Travel (min),Total Distance (km),Late Deliveries,Solve Time (s)
+Optimistic,OPTIMAL,5,505.0,325.6,0,60.0
+Mostlikely,OPTIMAL,5,593.0,344.2,0,60.0
+Pessimistic,OPTIMAL,5,1107.0,332.1,0,60.0

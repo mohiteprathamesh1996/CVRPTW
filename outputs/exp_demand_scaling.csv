@@ -1,0 +1,7 @@
+status,feasible,vehicles_used,total_travel_min,total_dist_km,late_deliveries,service_level,solve_time_s,demand_scale
+OPTIMAL,1,4,531.0,290.1,0,1.0,40.0,0.75
+OPTIMAL,1,5,598.0,358.9,0,1.0,40.0,1.0
+UNKNOWN,0,0,0.0,0.0,0,1.0,0.0,1.25
+UNKNOWN,0,0,0.0,0.0,0,1.0,0.0,1.5
+UNKNOWN,0,0,0.0,0.0,0,1.0,0.0,1.75
+UNKNOWN,0,0,0.0,0.0,0,1.0,0.0,2.0
