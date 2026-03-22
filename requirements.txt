@@ -1,0 +1,13 @@
+ortools>=9.8
+numpy>=1.26
+pandas>=2.0
+openpyxl>=3.1
+scikit-learn>=1.4
+scipy>=1.12
+matplotlib>=3.8
+seaborn>=0.13
+networkx>=3.2
+requests>=2.31
+tqdm>=4.66
+ipykernel>=6.0
+jupyter>=1.0
